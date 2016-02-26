@@ -9,7 +9,7 @@ var React = require("react");
 var InputElement = React.createClass({
     displayName: "InputElement",
 
-    charsRules: {
+    defaultCharsRules: {
         "9": "[0-9]",
         "a": "[A-Za-z]",
         "*": "[A-Za-z0-9]"
@@ -338,6 +338,8 @@ var InputElement = React.createClass({
         return !value && value !== 0 ? "" : value + "";
     },
     getInitialState: function () {
+        this.charsRules = "charsRules" in this.props ? this.props.charsRules : this.defaultCharsRules;
+
         var mask = this.parseMask(this.props.mask);
         var defaultValue = this.props.defaultValue != null ? this.props.defaultValue : null;
         var value = this.props.value != null ? this.props.value : defaultValue;
