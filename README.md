@@ -23,6 +23,10 @@ Character to cover unfilled editable parts of mask. Default character is "_". If
 
 Show mask even in empty input without focus.
 
+### `charsRules` : `object`
+
+Override default format characters: `maskRules={{'*': '[a-zA-Z0-9_.]'}}`. **Note:** this prop will replace all the default formats.
+
 ## Example
 ```js
 var PhoneInput = React.createClass({
